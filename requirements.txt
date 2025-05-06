@@ -1,0 +1,7 @@
+discord.py
+python-dotenv
+google-generativeai
+Pillow
+aiohttp
+better-profanity
+fpdf2
