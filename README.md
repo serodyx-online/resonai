@@ -159,7 +159,7 @@ Not: Diğer DM mesajlarına (bu komut hariç) bot yanıt vermez, güvenlik amac�
 ---
 
 ## 📁 Klasör Yapısı
-[Projenin detaylı klasör yapısını görmek için tıklayınız.](structure.md)
+[Projenin detaylı klasör yapısını görmek için tıklayınız.](structure.txt)
 
 ## 🤝 Katkıda Bulunma
 Bu proje açık kaynaklıdır. Katkıda bulunmak isterseniz, lütfen bir "issue" açın veya "pull request" gönderin. Yapıcı geri bildirimler her zaman değerlidir.
