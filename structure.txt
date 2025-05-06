@@ -23,13 +23,13 @@ Projenin ana klasör yapısı aşağıdaki gibidir:
 |   |-- helpers.py             # Genel yardımcılar
 |   |-- persistence.py         # Veri kaydetme/yükleme
 |
-|-- data/                        # Kalıcı veriler (otomatik oluşur)
+|-- data/                        # Kalıcı veriler (bot çalıştırılınca otomatik oluşturulur)
 |   |-- chat_data.pkl
 |   |-- status_messages.pkl
 |
-|-- user_logs/                   # Kullanıcıların kanal etkileşim logları (otomatik oluşturulur)
+|-- user_logs/                   # Kullanıcıların kanal etkileşim logları (bot çalıştırılınca  otomatik oluşturulur)
 |
-|-- dm_logs/                     # Kullanıcıların DM etkileşim logları (otomatik oluşturulur)
+|-- dm_logs/                     # Kullanıcıların DM etkileşim logları (bot çalıştırılınca  otomatik oluşturulur)
 |
 |-- assets/                      # Font dosyaları vb.
 |   |-- DejaVuSans.ttf
@@ -38,6 +38,5 @@ Projenin ana klasör yapısı aşağıdaki gibidir:
 |-- turkish_profanity.txt      # Küfür listesi
 |-- .env                         # Ortam değişkenleri (eğer yoksa siz oluşturacaksınız)
 |-- requirements.txt             # Gerekli Python kütüphaneleri
-|-- README_TR.md                    # Bu dosya
-|-- benioku.md                    # Bu dosya
+|-- README.md                    # ReadMe Dosyası
 |-- LICENSE                      # Lisans dosyası
