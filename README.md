@@ -6,8 +6,8 @@ ResonAI, Discord sunucularında belirli bir uzmanlık alanında (varsayılan ola
 
 **Temel Özellikler:**
 
-* **Modüler Tasarım:**
-* **Gemini API Entegrasyonu:**
+* **Modüler Tasarım:** Kolaylıkla düzenlenebilir geliştirilebilir modüler yapı.
+* **Gemini API Entegrasyonu:** Yapay zeka entegrasyonu sayesinde sorularınızı doğrusal şekilde cevaplar.
 * **Görsel Analizi:** Desteklenen formatlardaki görselleri analiz edebilir (varsayılan olarak örn; ekipman fotoğrafları, nota kağıtları).
 * **Sohbet Geçmişi Yönetimi:** Her kullanıcı için (her kanalda ayrı ayrı) sohbet geçmişi tutar ve bu geçmişi API isteklerinde kullanır.
 * **Kalıcı Hafıza:** Her kullanıcı için ayrı tutulan bu geçmiş, bot yeniden başlatılsa bile korunur (komutlarla manuel veya inaktiflikten otomatik silinme durumları hariç).
@@ -116,59 +116,45 @@ ResonAI tamamen hazır ve komutları bekliyor.
 -----------------------------------------
 ```
 Eğer bot sahibi olarak DM'den bota (prefix)restart komutu gönderebilmek istiyorsanız botu ana dizindeki "start.bat" dosyasından çalıştırmanız gerekmektedir.
+Ayrıca botun kapanış mesajının kanallara gitmesi için botun sahibi tarafından dm atılarak "sdown" komutuyla kapatılması gerekir.
 
-## ⚙️ Temel Özellikler
-
-Yapay Zeka Sohbet: Belirlenen uzmanlık alanında soruları yanıtlar.
-
-Görsel Analizi: Desteklenen görselleri analiz eder.
-
-Sohbet Geçmişi: Her kullanıcı-kanal için ayrı sohbet geçmişi tutar.
-
-Küfür filtresi (turkish_profanity.txt ile özelleştirilebilir).
-
-Kısa mesaj ve tekrar eden mesaj engelleme.
-
-GIF ve Sticker engelleme.
-
-Konu, küfür ihlali takibi ve otomatik timeout.
-
-İnaktif Sohbet Temizliği: Belirli bir süre (varsayılan olarak 45 dakika) etkileşimde bulunmayan kullanıcıların botla olan geçmişini (hafıza ve kanaldaki mesajlar) temizler ve kullanıcılara son 10/5 dakika kala ve silindikten sonra DM ile uyarı/bilgilendirme gönderir.
-
-Botun tanıtım mesajını ve aktiflik/kapanış mesajını (eğer kanalda yoksa) belirtilen kanallara gönderir, tanıtım mesajını sabitler.
-(Kapanış mesajının gitmesi için botun sahibi tarafından dm atılarak "sdown" komutuyla kapanması gerekir.)
+## KOMUTLAR (PREFIX DEĞİŞTİRİLEBİLİR)
 
 ### ⚙️ Genel Kullanıcı Komutları (Botun dinlediği kanallarda);
-{PREFIX}yardim (veya !help, !yardım): Botun yapabilecekleri, kanal kuralları ve komutlar hakkında detaylı bir yardım mesajını kullanıcıya DM olarak gönderir.
 
-{PREFIX}kaydet: Komutu kullanan kullanıcının bot ile o kanaldaki sohbet geçmişini PDF formatında oluşturur ve kullanıcıya DM ile gönderir.
 
-{PREFIX}temizle: Komutu kullanan kullanıcının botla olan sohbet geçmişini kanaldan ve botun **hafızasından** temizler.
+`!yardim (veya !help, !yardım)`
+Botun yapabilecekleri, kanal kuralları ve komutlar hakkında detaylı bir yardım mesajını kullanıcıya DM olarak gönderir.
 
-Kullanıcı DM Komutları (Bota DM Göndererek)
-{PREFIX}dmtemizle: Botun o kullanıcıya daha önce gönderdiği tüm DM'ler silinmeye başlar. Kullanıcıya işlem sonucu hakkında DM ile bilgi verilir.
+`!kaydet`
+Komutu kullanan kullanıcının bot ile o kanaldaki sohbet geçmişini PDF formatında oluşturur ve kullanıcıya DM ile gönderir.
+
+`!temizle` Komutu kullanan kullanıcının botla olan sohbet geçmişini kanaldan ve botun **hafızasından** temizler.
+
+#### Kullanıcı DM Komutları (Bota DM Göndererek)
+`!dmtemizle` Botun o kullanıcıya daha önce gönderdiği tüm DM'ler silinmeye başlar. Kullanıcıya işlem sonucu hakkında DM ile bilgi verilir.
 
 Not: Diğer DM mesajlarına (bu komut hariç) bot yanıt vermez, güvenlik amacıyla dm_logs altına kaydeder ve kullanıcıya sadece bu komutu kullanabileceğini belirten bir bilgi mesajı gönderir.
 
 ### ⚙️ Yönetici Komutları (Sunucu Kanalında - Yönetici Yetkisi Gerekir)
-{PREFIX}embedaciklama: Mevcut kanala botun ana açıklama embed'ini gönderir/günceller ve sabitler. Varsa eski embed mesaj silinir.
+`!embedaciklama` Mevcut kanala botun ana açıklama embed'ini gönderir/günceller ve sabitler. Varsa eski embed mesaj silinir.
 
-{PREFIX}temizlechat: Komutun kullanıldığı kanaldaki tüm mesajları siler (sabitlenmiş mesajlar ve botun son durum mesajı hariç). Onay gerektirir.
+`!temizlechat` Komutun kullanıldığı kanaldaki tüm mesajları siler (sabitlenmiş mesajlar ve botun son durum mesajı hariç). Onay gerektirir.
 
-{PREFIX}sifirla <@kullanıcı/ID> <küfür/konu>: Belirtilen kullanıcının küfür veya konu dışı ihlal sayacını sıfırlar.
+`!sifirla <@kullanıcı/ID> <küfür/konu>` Belirtilen kullanıcının küfür veya konu dışı ihlal sayacını sıfırlar.
 
-{PREFIX}cl <@kullanıcı/ID>: Belirtilen kullanıcının botla olan sohbet geçmişini (hafıza) temizler ve kanaldaki o kullanıcıya ait/yanıt olan mesajları (son 14 gün, bazı özel mesajlar hariç) siler. Onay gerektirir.
+`!cl <@kullanıcı/ID>` Belirtilen kullanıcının botla olan sohbet geçmişini (hafıza) temizler ve kanaldaki o kullanıcıya ait/yanıt olan mesajları (son 14 gün, bazı özel mesajlar hariç) siler. Onay gerektirir.
 
-{PREFIX}cl herkes: Kanaldaki tüm kullanıcıların botla olan sohbet geçmişlerini (hafıza) temizler ve kanaldaki tüm mesajları (sabitlenmişler ve bot durum mesajı hariç) siler. Onay gerektirir.
+`!cl herkes` Kanaldaki tüm kullanıcıların botla olan sohbet geçmişlerini (hafıza) temizler ve kanaldaki tüm mesajları (sabitlenmişler ve bot durum mesajı hariç) siler. Onay gerektirir.
 
 ### ⚙️ Bot Sahibi Komutları (Bu komutlar yalnızca bot sahibi tarafından Bota **DM** Göndererek kullanılır - çalışması için .env içerisinde BOT_OWNER_ID doldurulması gereklidir.)
-{PREFIX}sdown: Botu güvenli bir şekilde kapatır. Verileri kaydeder ve izin verilen kanallara kapanış mesajı gönderir.
+`!sdown` Botu güvenli bir şekilde kapatır. Verileri kaydeder ve izin verilen kanallara kapanış mesajı gönderir.
 
-{PREFIX}restart: Botu yeniden başlatmak üzere kapatır (çıkış kodu 5 verir). Verileri kaydeder ve izin verilen kanallara yeniden başlatma mesajı gönderir. (Bu komutun botu gerçekten yeniden başlatması için, botun daima ana dizinde verilen baslat.bat dosyası ile çalıştırılması gerekmektedir.)
+`!restart` Botu yeniden başlatmak üzere kapatır (çıkış kodu 5 verir). Verileri kaydeder ve izin verilen kanallara yeniden başlatma mesajı gönderir. (Bu komutun botu gerçekten yeniden başlatması için, botun daima ana dizinde verilen baslat.bat dosyası ile çalıştırılması gerekmektedir.)
 
-{PREFIX}dmtemizle <kullanıcı_id>: Belirtilen kullanıcı ID'sine bot tarafından gönderilmiş tüm DM'leri siler. Hedef kullanıcıya ve bot sahibine işlem hakkında bilgi verir.
+`!dmtemizle <kullanıcı_id>` Belirtilen kullanıcı ID'sine bot tarafından gönderilmiş tüm DM'leri siler. Hedef kullanıcıya ve bot sahibine işlem hakkında bilgi verir.
 
-{PREFIX}dmtemizle herkes: Botun o ana kadar özel mesaj tüm kullanıcılardan DM'leri siler. Etkilenen her kullanıcıya ve bot sahibine işlem hakkında bilgi verir.
+`!dmtemizle herkes` Botun o ana kadar özel mesaj tüm kullanıcılardan DM'leri siler. Etkilenen her kullanıcıya ve bot sahibine işlem hakkında bilgi verir.
 
 ---
 
