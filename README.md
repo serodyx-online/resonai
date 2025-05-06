@@ -1,4 +1,5 @@
 # ResonAI - AI Discord Sohbet Botu (Gemini API Entegrasyonlu)
+![resonai](https://github.com/user-attachments/assets/512bc21d-54fc-40d6-91cb-0246607bce22)
 
 ## 🤖 Bot Hakkında
 
