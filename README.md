@@ -1,4 +1,4 @@
-# ResonAI - Discord Sohbet Botu (Gemini API Entegrasyonlu)
+# ResonAI - AI Discord Sohbet Botu (Gemini API Entegrasyonlu)
 
 ## 🤖 Bot Hakkında
 
